@@ -21,7 +21,5 @@ if (outputFd == -1)
     {
     printf ("Error opening file %s\n ", argv[2]) ; exit(-3);
     }
-    //printf("%d\n", 12);
 f1(inputFd, outputFd, argv[3][0]);
- //printf("%d\n", 3);
 }
