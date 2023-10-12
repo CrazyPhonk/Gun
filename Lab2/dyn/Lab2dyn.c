@@ -3,10 +3,14 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <stdio.h>
-extern void f1(int, int, char);
+#include <dlfcn.h>
+
+
 int main (int argc, char * argv [ ])
 {
 int inputFd, outputFd, openFlags;
+void *library;
+int (*f1)(int x, int y, char c);
 mode_t filePerms ;
 ssize_t numRead;
 inputFd = open (argv[1], O_RDONLY);
@@ -21,5 +25,14 @@ if (outputFd == -1)
     {
     printf ("Error opening file %s\n ", argv[2]) ; exit(-3);
     }
-f1(inputFd, outputFd, argv[3][0]);
+
+library = dlopen("/home/egor/VSCode/Gun/Lab2/dyn", RTLD_LAZY);
+if(!library){
+    printf("dll error\n");
+    exit(-6);
+}
+f1 = dlsym(library, "f1.c");
+    //printf("%d\n", 12);
+(*f1)(inputFd, outputFd, argv[3][0]);
+dlclose(library);
 }

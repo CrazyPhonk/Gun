@@ -1,0 +1,5 @@
+gcc -fPIC -c f1.c
+gcc -shared f1.o -o libmyfunc.so
+gcc -c Lab2dyn.c
+gcc Lab2dyn.o -L. -lmyfunc -o dynamic
+./dynamic textfile textfile2 s
