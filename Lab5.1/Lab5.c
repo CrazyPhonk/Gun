@@ -78,7 +78,7 @@ int main(int argc, char *argv[]) {
     struct mymsgbuf qbuf;
     
     
-    key = ftok(".", 'm');
+    //key = ftok(".", 'm');
 	if((msgqid = msgget(key, IPC_CREAT|0660)) == -1) {
 		perror("msgget");
 		exit(1);
