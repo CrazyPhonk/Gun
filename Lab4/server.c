@@ -7,6 +7,6 @@ int main(int argc, char * argv[]){
     char *istr;
     close(fd[1]);
     read(fd[0], buf, sizeof(buf));
-    buf2 = strtok(buf, " ");
+    istr = strtok(buf, " ");
     return 0;
 }

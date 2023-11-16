@@ -13,10 +13,10 @@
 #define MAX_SEND_SIZE 80
 
 char argvSended1 = 0;
-            char argvSended2[256] = {0};
-            char argvSended3[256] = {0};
-            char *a1= &argvSended1, *a2= &argvSended2, *a3=&argvSended3;
-            int flag = 0, j = 0, k =0;
+char argvSended2[256] = {0};
+char argvSended3[256] = {0};
+char *a1= &argvSended1, *a2= &argvSended2, *a3=&argvSended3;
+int flag = 0, j = 0, k =0;
 
 struct mymsgbuf {
         long mtype;
